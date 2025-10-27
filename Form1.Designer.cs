@@ -44,6 +44,7 @@
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // pnlChessBoard
             // 
+            this.pnlChessBoard.BackColor = System.Drawing.Color.White;
             this.pnlChessBoard.Location = new System.Drawing.Point(12, 39);
             this.pnlChessBoard.Name = "pnlChessBoard";
             this.pnlChessBoard.Size = new System.Drawing.Size(741, 741);
@@ -83,21 +85,23 @@
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.DarkRed;
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.btnLAN);
             this.panel2.Controls.Add(this.txbIP);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.progressBar1);
             this.panel2.Controls.Add(this.txbPlayerName);
-            this.panel2.Location = new System.Drawing.Point(767, 403);
+            this.panel2.Location = new System.Drawing.Point(767, 355);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(392, 334);
+            this.panel2.Size = new System.Drawing.Size(392, 425);
             this.panel2.TabIndex = 1;
             // 
             // btnLAN
             // 
             this.btnLAN.AutoSize = true;
             this.btnLAN.Font = new System.Drawing.Font("Showcard Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLAN.Location = new System.Drawing.Point(14, 241);
+            this.btnLAN.Location = new System.Drawing.Point(14, 204);
             this.btnLAN.Name = "btnLAN";
             this.btnLAN.Size = new System.Drawing.Size(160, 34);
             this.btnLAN.TabIndex = 4;
@@ -107,7 +111,7 @@
             // txbIP
             // 
             this.txbIP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbIP.Location = new System.Drawing.Point(14, 194);
+            this.txbIP.Location = new System.Drawing.Point(14, 157);
             this.txbIP.Name = "txbIP";
             this.txbIP.Size = new System.Drawing.Size(160, 30);
             this.txbIP.TabIndex = 3;
@@ -116,7 +120,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(193, 83);
+            this.pictureBox2.Location = new System.Drawing.Point(193, 46);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(196, 192);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,7 +129,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(14, 142);
+            this.progressBar1.Location = new System.Drawing.Point(14, 105);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(160, 28);
             this.progressBar1.TabIndex = 1;
@@ -133,7 +137,7 @@
             // txbPlayerName
             // 
             this.txbPlayerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPlayerName.Location = new System.Drawing.Point(14, 83);
+            this.txbPlayerName.Location = new System.Drawing.Point(14, 46);
             this.txbPlayerName.Name = "txbPlayerName";
             this.txbPlayerName.ReadOnly = true;
             this.txbPlayerName.Size = new System.Drawing.Size(160, 30);
@@ -146,6 +150,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Maroon;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem});
@@ -190,10 +195,20 @@
             this.quitToolStripMenuItem.Text = "Quit";
             this.quitToolStripMenuItem.Click += new System.EventHandler(this.quitToolStripMenuItem_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Matura MT Script Capitals", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(24, 303);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(349, 47);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "WIN TO WIN ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1177, 798);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -232,6 +247,7 @@
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

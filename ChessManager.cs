@@ -171,6 +171,23 @@ namespace caro_game
 
 
         }
+        public void SoundEndgame(string Amthanh)
+        {
+            string path = Application.StartupPath + "\\Resources\\nokia.wav";
+            if (File.Exists(path))
+            {
+                SoundPlayer player = new SoundPlayer(path);
+                player.Play();
+
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file âm thanh: " + path);
+            }
+
+
+        }
+
         private void Btn_Click(object sender, EventArgs e)
         {
 
@@ -205,7 +222,9 @@ namespace caro_game
         {
             if (endedGame != null)
             {
+                SoundEndgame("nokia");
                 endedGame(this, new EventArgs());
+                
             }
         }
 
