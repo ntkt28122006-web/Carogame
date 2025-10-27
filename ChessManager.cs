@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace caro_game
 {
@@ -103,7 +106,7 @@ namespace caro_game
                 new player (player2Name, Image.FromFile(Application.StartupPath + "\\Resources\\Ảnh O.jpg"))
             };
 
-           
+
 
 
         }
@@ -152,6 +155,22 @@ namespace caro_game
             }
 
         }
+        public void SoundPlay(string Amthanh)
+        {
+            string path = Application.StartupPath + "\\Resources\\Click.wav";
+            if (File.Exists(path))
+            {
+                SoundPlayer player = new SoundPlayer(path);
+                player.Play();
+
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file âm thanh: " + path);
+            }
+
+
+        }
         private void Btn_Click(object sender, EventArgs e)
         {
 
@@ -161,7 +180,7 @@ namespace caro_game
             {
                 return; // khong thay doi hinh anh da ton tai
             }
-
+            SoundPlay("Click");
             Mark(btn);
 
             playTimeLine.Push(new PlayInfo(GetChessPoint(btn),CurrentPlayer));

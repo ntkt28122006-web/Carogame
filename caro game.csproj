@@ -102,5 +102,8 @@
   <ItemGroup>
     <None Include="Resources\ảnh X.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Click.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
