@@ -1,0 +1,11 @@
+D:\Code\caro game\bin\Debug\caro game.exe.config
+D:\Code\caro game\bin\Debug\caro game.exe
+D:\Code\caro game\bin\Debug\caro game.pdb
+D:\Code\caro game\obj\Debug\caro game.csproj.AssemblyReference.cache
+D:\Code\caro game\obj\Debug\caro_game.Form1.resources
+D:\Code\caro game\obj\Debug\caro_game.Properties.Resources.resources
+D:\Code\caro game\obj\Debug\caro game.csproj.GenerateResource.cache
+D:\Code\caro game\obj\Debug\caro game.csproj.CoreCompileInputs.cache
+D:\Code\caro game\obj\Debug\caro game.exe
+D:\Code\caro game\obj\Debug\caro game.pdb
+D:\Code\caro game\obj\Debug\caro_game.FormLogin.resources
