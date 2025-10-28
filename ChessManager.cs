@@ -102,8 +102,8 @@ namespace caro_game
             this.PlayerMark = mark;
             this.Player = new List<player>()
             {
-                new player(player1Name, Image.FromFile(Application.StartupPath + "\\Resources\\Ảnh X.jpg")),
-                new player (player2Name, Image.FromFile(Application.StartupPath + "\\Resources\\Ảnh O.jpg"))
+                new player(player1Name, Image.FromFile(Application.StartupPath + "\\Resources\\X1.jpg")),
+                new player (player2Name, Image.FromFile(Application.StartupPath + "\\Resources\\O1.jpg"))
             };
 
 
@@ -224,6 +224,8 @@ namespace caro_game
             {
                 SoundEndgame("nokia");
                 endedGame(this, new EventArgs());
+                chessBoard.Controls.Clear();
+                DrawChessBoard();
                 
             }
         }
@@ -294,7 +296,7 @@ namespace caro_game
                 }
             }
 
-            return (CountLeft + CountRight) >= 5;
+            return (CountLeft + CountRight) == 5;
 
 
         }
@@ -328,7 +330,7 @@ namespace caro_game
                 }
             }
 
-            return (CountTop + CountBot) >= 5;
+            return (CountTop + CountBot) ==  5;
         }
         private bool isCheochinh(Button btn)
         {
@@ -368,7 +370,7 @@ namespace caro_game
                 }
             }
 
-            return (CountTop + CountBot) >= 5;
+            return (CountTop + CountBot) == 5;
         }
 
         private bool isCheophu(Button btn)
@@ -403,7 +405,7 @@ namespace caro_game
                     break;
                 }
             }
-            return (countTop + countBot >= 5);
+            return (countTop + countBot == 5);
         }
 
 

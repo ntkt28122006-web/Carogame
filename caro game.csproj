@@ -103,6 +103,7 @@
     <None Include="Resources\ảnh X.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Resources\Avatar.jpg" />
     <Content Include="Resources\Click.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

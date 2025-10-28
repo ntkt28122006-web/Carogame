@@ -148,5 +148,10 @@ namespace caro_game
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     } // test dong bo 123 123 123 89932523
 }
