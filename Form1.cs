@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Net.Sockets;
+using System.Threading;
+using GameCaro;
+using System.Net.NetworkInformation;
 
 
 
@@ -22,8 +26,10 @@ namespace caro_game
 
         #region Properties
         ChessManager ChessBoard;
+        SocketManager socket;
         private string player1Name;
         private string player2Name;
+
         #endregion
         public Form1(string p1, string p2)
         {
@@ -152,6 +158,81 @@ namespace caro_game
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var result = GameHistory.LoadResults();
+            if (result.Count == 0)
+            {
+                MessageBox.Show("Chưa có game nào được lưu!");
+                return;
+            }
+            string text = string.Join(Environment.NewLine, result.Select(r => r.ToString()));
+            MessageBox.Show(text, "Lịch sử đấu");
+        }
+
+        private void btnLAN_Click(object sender, EventArgs e)
+        {
+            socket.IP = txbIP.Text;
+
+            if (!socket.ConnectServer())
+            {
+                socket.CreateServer();
+
+                Thread listenThread = new Thread(() =>
+                {
+                    while (true)
+                    {
+                        Thread.Sleep(500);
+                        try
+                        {
+                            Listen();
+                        }
+                        catch { }
+                        
+                    }
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+
+            }
+            else
+            {
+                Thread listenThread = new Thread(() =>
+                {
+                    Listen();
+                });
+                listenThread.IsBackground = true;
+                listenThread.Start();
+                socket.Send("Thông tin từ client");
+            }
+
+            
+        }
+
+        private void Listen()
+        {
+            throw new NotImplementedException();
+        }
+
+    
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Wireless80211);
+            if (string.IsNullOrEmpty(txbIP.Text))
+            {
+                txbIP.Text = socket.GetLocalIPv4(NetworkInterfaceType.Ethernet);
+
+            }
+
+            void Listen()
+            {
+                string data = (string)socket.Receive();
+
+                MessageBox.Show(data);
+            }
         }
     } 
 }

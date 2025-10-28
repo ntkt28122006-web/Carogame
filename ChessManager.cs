@@ -223,6 +223,17 @@ namespace caro_game
             if (endedGame != null)
             {
                 SoundEndgame("nokia");
+
+                // xác định người thắng
+                int winnerIndex = CurrentPlayer == 0 ? 1 : 0;
+                string winner = Player[winnerIndex].Name;
+                string loser = Player[CurrentPlayer].Name;
+
+                // Lưu kết quả
+                GameHistory.LuuKetqua(new GameResult(winner, loser));
+
+                MessageBox.Show($"{winner} Thắng!\nKết quả đã được lưu.", "Kết thúc ván đấu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 endedGame(this, new EventArgs());
                 chessBoard.Controls.Clear();
                 DrawChessBoard();
